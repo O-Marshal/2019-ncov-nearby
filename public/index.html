@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="肺炎疫情实时动态 · 地级市"/>
+    <title>周边游疫情监控中心</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+  <script type="text/javascript" src="https://web-stat.jiguang.cn/web-janalytics/scripts/janalytics-web.min.js"></script>
+  <script>
+    window.JAnalyticsInterface.init({
+      appkey: "6cb7728b7def08da32962f41", // 极光官网中创建应用后分配的 appkey，必填
+      debugMode: true, // 设置是否开启 debug 模式。true 则会打印更多的日志信息。设置 false 则只会输出 w、e 级别的日志。
+      channel: "default-channel", // 渠道名称，默认值为:default-channel
+      loc: true, //设置是否尝试获取位置信息上报，默认为 true
+      singlePage:true //设置是否为单页面，默认为 false
+    });
+  </script>
+</html>
