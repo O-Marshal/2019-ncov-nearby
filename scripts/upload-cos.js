@@ -22,10 +22,10 @@ function checkUploaded() {
   })
 }
 
-async function uploadDir (dir, skip = true) {
+async function uploadDir (dir, prefix = "", skip = true) {
   const files = fs.readdirSync(path.resolve(baseDir, dir)).filter(x => !x.endsWith('map'))
   for (const file of files) {
-    const fileName = path.join(dir, file)
+    const fileName = prefix + path.join(dir, file)
     if (skip && uploads.indexOf(fileName) >= 0) continue
     const realFileName = path.resolve(baseDir, dir, file)
     const realFileStats = fs.statSync(realFileName)
@@ -48,7 +48,7 @@ async function run() {
     await checkUploaded()
     console.log("开始上传：")
     await Promise.all([
-      uploadDir('.', false),
+      uploadDir('.', "nearby/", false),
       uploadDir('static/media'),
       uploadDir('static/js'),
       uploadDir('static/css')
